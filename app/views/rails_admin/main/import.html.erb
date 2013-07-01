@@ -91,7 +91,7 @@
   <% [@abstract_model.model.belongs_to_fields, @abstract_model.model.many_fields].flatten.each do |field| -%>
   <div style="display:inline-block; width: 45%;background:#cecece;margin: 5px;padding: 5px;">
   <label style="width:200px;"><%= field %> mapping</label>&nbsp;&nbsp;
-  <% next if field.to_s.match /tag/ %
+  <%- next if field.to_s.match /tag/ %
   <select name="<%= field %>">
     <% field.to_s.classify.constantize.new.attributes.keys.each do |key| -%>
   	<option value="<%= key %>"><%= key %></option>
